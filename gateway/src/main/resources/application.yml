@@ -1,10 +1,8 @@
 server:
-  port: 8070
-  servlet:
-    context-path: /provider
+  port: 8071
 spring:
   application:
-    name: provider
+    name: gateway
   cloud:
     nacos:
       discovery:
