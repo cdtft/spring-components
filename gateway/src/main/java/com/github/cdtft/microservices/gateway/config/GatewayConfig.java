@@ -15,7 +15,7 @@ public class GatewayConfig {
     @Bean
     public RouteLocator routeLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route(r -> r.path("/provider/**").uri("http://localhost:8070/provider"))
+                .route(r -> r.path("/provider/**").uri("lb://provider"))
                 .build();
     }
 }
