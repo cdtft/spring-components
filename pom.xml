@@ -7,4 +7,11 @@
     <groupId>com.github.cdtft.microservices</groupId>
     <artifactId>spring-conpoment</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>nacos-config</module>
+        <module>service-provider</module>
+        <module>service-consumer</module>
+        <module>gateway</module>
+    </modules>
 </project>
