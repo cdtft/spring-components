@@ -4,7 +4,6 @@ import com.alibaba.cloud.nacos.NacosConfigManager;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.nacos.api.config.listener.Listener;
 import com.alibaba.nacos.api.exception.NacosException;
-import com.alibaba.nacos.client.utils.JSONUtils;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -54,7 +53,7 @@ public class NacosRouteDefinitionRepository implements RouteDefinitionRepository
             if (StringUtils.isNotBlank(content)) {
                 routeDefinitionList = JSONObject.parseArray(content, RouteDefinition.class);
             }
-            return Flux.fromIterable()
+            return Flux.fromIterable(routeDefinitionList);
         } catch (NacosException e) {
             e.printStackTrace();
         }
