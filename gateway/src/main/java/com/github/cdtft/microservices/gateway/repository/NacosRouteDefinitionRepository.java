@@ -28,9 +28,9 @@ public class NacosRouteDefinitionRepository implements RouteDefinitionRepository
 
     private final static Logger LOG = LoggerFactory.getLogger(NacosRouteDefinitionRepository.class);
 
-    private static final String MICRO_SERVICE_DATA_ID = "micro-routes";
+    private static final String MICRO_SERVICE_DATA_ID = "gateway";
 
-    private static final String MICRO_SERVICE_GROUP_ID = "micro-gateway";
+    private static final String MICRO_SERVICE_GROUP_ID = "DEFAULT_GROUP";
 
     private final ApplicationEventPublisher applicationEventPublisher;
 
@@ -48,7 +48,7 @@ public class NacosRouteDefinitionRepository implements RouteDefinitionRepository
         List<RouteDefinition> routeDefinitionList = Lists.newArrayList();
         try {
             String content = nacosConfigManager.getConfigService().getConfig(MICRO_SERVICE_DATA_ID,
-                    MICRO_SERVICE_DATA_ID, 5000);
+                    MICRO_SERVICE_GROUP_ID, 5000);
             LOG.info("get route config from nacos content : {}", content);
             if (StringUtils.isNotBlank(content)) {
                 routeDefinitionList = JSONObject.parseArray(content, RouteDefinition.class);
