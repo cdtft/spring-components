@@ -13,5 +13,6 @@
         <module>service-provider</module>
         <module>service-consumer</module>
         <module>gateway</module>
+        <module>reactor-learn</module>
     </modules>
 </project>
