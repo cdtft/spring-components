@@ -28,7 +28,7 @@ public class NacosRouteDefinitionRepository implements RouteDefinitionRepository
 
     private final static Logger LOG = LoggerFactory.getLogger(NacosRouteDefinitionRepository.class);
 
-    private static final String MICRO_SERVICE_DATA_ID = "gateway";
+    private static final String MICRO_SERVICE_DATA_ID = "dynamic-route";
 
     private static final String MICRO_SERVICE_GROUP_ID = "DEFAULT_GROUP";
 

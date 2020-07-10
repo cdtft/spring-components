@@ -18,7 +18,10 @@ cdtft:
       enable: true
       dataType: nacos
 management:
+  endpoint:
+    gateway:
+      enabled: true
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: gateway
